@@ -67,9 +67,3 @@ c:\Users\smand\OneDrive\Desktop\UIUX\
 2. Double-click or open `index.html` in any web browser (Chrome, Edge, Firefox, Safari).
 3. The page functions 100% locally without relying on any external CDNs or network servers.
 
-### 2. Host on GitHub Pages
-1. Create a new GitHub repository (e.g., `classroom-booking-ux-case-study`).
-2. Push `index.html`, `style.css`, `README.md`, and `assets/` to the `main` branch.
-3. Go to **Repository Settings &rarr; Pages**.
-4. Set the Source branch to `main` / `root` and click **Save**.
-5. The case-study site will be live at `https://<username>.github.io/<repo-name>/`.
