@@ -1,43 +1,46 @@
 /* ==========================================================================
-   UI/UX Mid-Term Examination Case Study — Modern Editorial Design System
+   UI/UX Mid-Term Examination Case Study — Warm Editorial Design System
    Project: Booking a Classroom Shouldn’t Require Guesswork
    Constraint: Pure Vanilla CSS (No Frameworks, No JS, System Typography)
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. CSS Custom Properties / Design Tokens
+   1. CSS Custom Properties / Warm Color Palette Tokens
    -------------------------------------------------------------------------- */
 :root {
-  /* Canvas & Surface Colors (Pure White Canvas) */
-  --bg-main: #ffffff;
-  --bg-surface: #ffffff;
-  --bg-surface-alt: #f8fafc;
+  /* Warm Editorial Canvas & Surface Colors */
+  --bg-main: #faf8f5;        /* Warm Cream Canvas */
+  --bg-surface: #ffffff;     /* Pure White Card Surface */
+  --bg-surface-alt: #f4efe6; /* Warm Accent Surface */
+  --bg-warm-light: #fffdfa;  /* Ultra Light Warm Highlight */
 
-  /* Typography Colors */
-  --ink-primary: #0f172a;
-  --ink-secondary: #334155;
-  --ink-muted: #64748b;
-  --ink-light: #94a3b8;
+  /* Typography Colors (Warm Deep Slate/Ink) */
+  --ink-primary: #1e1b18;    /* Deep Warm Ink */
+  --ink-secondary: #3b3530;  /* Warm Charcoal */
+  --ink-muted: #6e675f;      /* Warm Muted Slate */
+  --ink-light: #9e958a;      /* Warm Light Muted */
 
-  /* Structural Lines & Subtle Borders */
-  --line-light: #f1f5f9;
-  --line-strong: #e2e8f0;
+  /* Structural Lines & Subtle Warm Borders */
+  --line-light: #eee7dc;     /* Light Warm Line */
+  --line-strong: #e2d7c7;    /* Strong Warm Line */
 
-  /* Brand & Accent Palette */
-  --indigo: #2563eb;
-  --indigo-dark: #1d4ed8;
-  --indigo-light: #eff6ff;
+  /* Warm Brand & Accent Palette */
+  --terracotta: #c95d3b;     /* Warm Terracotta / Coral */
+  --terracotta-light: #fdf2ee;
 
-  --emerald: #059669;
-  --emerald-light: #ecfdf5;
-
-  --violet: #7c3aed;
-  --violet-light: #f5f3ff;
-
-  --amber: #d97706;
+  --amber: #d97706;          /* Warm Amber / Gold */
   --amber-light: #fffbeb;
 
-  --rose: #e11d48;
+  --emerald: #059669;        /* Forest Emerald */
+  --emerald-light: #ecfdf5;
+
+  --violet: #7c3aed;         /* Warm Plum / Violet */
+  --violet-light: #f5f3ff;
+
+  --indigo: #2563eb;         /* Deep Warm Blue */
+  --indigo-light: #eff6ff;
+
+  --rose: #e11d48;           /* Soft Warm Rose */
   --rose-light: #fff1f2;
 
   /* Typography Stack */
@@ -51,13 +54,13 @@
   --radius-lg: 16px;
   --radius-full: 9999px;
 
-  /* Modern Floating Shadows */
-  --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
-  --shadow-hover: 0 12px 28px -4px rgba(15, 23, 42, 0.1), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
+  /* Warm Elevated Floating Shadows */
+  --shadow-card: 0 10px 30px -5px rgba(45, 35, 25, 0.05), 0 2px 8px -2px rgba(45, 35, 25, 0.03);
+  --shadow-hover: 0 16px 36px -6px rgba(45, 35, 25, 0.09), 0 4px 12px -2px rgba(45, 35, 25, 0.05);
 }
 
 /* --------------------------------------------------------------------------
-   2. Reset & Pure White Base
+   2. Reset & Warm Base Styling
    -------------------------------------------------------------------------- */
 html {
   scroll-behavior: smooth;
@@ -72,17 +75,17 @@ html {
 }
 
 body {
-  background-color: #ffffff;
+  background-color: var(--bg-main);
   color: var(--ink-secondary);
   font-family: var(--font-sans);
-  font-size: 1.0625rem; /* ~17px */
+  font-size: 1.0625rem;
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 :focus-visible {
-  outline: 3px solid var(--indigo);
+  outline: 3px solid var(--terracotta);
   outline-offset: 3px;
 }
 
@@ -93,14 +96,14 @@ img {
 }
 
 a {
-  color: var(--indigo);
+  color: var(--terracotta);
   text-decoration: underline;
   text-underline-offset: 3px;
   transition: color 0.15s ease;
 }
 
 a:hover {
-  color: var(--indigo-dark);
+  color: #a84627;
 }
 
 /* --------------------------------------------------------------------------
@@ -114,9 +117,9 @@ a:hover {
 }
 
 section {
-  padding: 4.5rem 0;
+  padding: 5rem 0;
   border-bottom: 1px solid var(--line-light);
-  background-color: #ffffff;
+  background-color: var(--bg-main);
 }
 
 /* --------------------------------------------------------------------------
@@ -126,11 +129,11 @@ section {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(250, 248, 245, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line-light);
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 2px 10px rgba(45, 35, 25, 0.04);
 }
 
 .nav-container {
@@ -155,9 +158,9 @@ section {
 }
 
 .nav-title-dot {
-  width: 8px;
-  height: 8px;
-  background-color: var(--indigo);
+  width: 9px;
+  height: 9px;
+  background-color: var(--terracotta);
   border-radius: var(--radius-full);
 }
 
@@ -193,8 +196,8 @@ section {
    5. Hero Section
    -------------------------------------------------------------------------- */
 .hero-section {
-  padding: 5rem 0 4rem;
-  background-color: #ffffff;
+  padding: 5.5rem 0 4.5rem;
+  background-color: var(--bg-main);
   border-bottom: 1px solid var(--line-light);
 }
 
@@ -202,19 +205,20 @@ section {
   display: inline-block;
   font-size: 0.8125rem;
   font-weight: 800;
-  color: var(--indigo);
+  color: var(--terracotta);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  padding: 0.35rem 0.85rem;
-  background-color: var(--indigo-light);
+  padding: 0.35rem 0.9rem;
+  background-color: var(--terracotta-light);
   border-radius: var(--radius-full);
   margin-bottom: 1.25rem;
+  border: 1px solid rgba(201, 93, 59, 0.15);
 }
 
 .hero-title {
-  font-size: 3.125rem;
+  font-size: 3.25rem;
   font-weight: 900;
-  line-height: 1.15;
+  line-height: 1.12;
   letter-spacing: -0.03em;
   color: var(--ink-primary);
   margin-bottom: 1.25rem;
@@ -237,7 +241,7 @@ section {
   max-width: 900px;
   margin-bottom: 2.75rem;
   padding-left: 1.5rem;
-  border-left: 4px solid var(--indigo);
+  border-left: 4px solid var(--terracotta);
 }
 
 /* Metrics Floating Cards */
@@ -249,7 +253,7 @@ section {
 }
 
 .metric-card {
-  background-color: #ffffff;
+  background-color: var(--bg-surface);
   border: 1px solid var(--line-light);
   border-radius: var(--radius-md);
   padding: 1.6rem 1.25rem;
@@ -266,7 +270,7 @@ section {
 .metric-number {
   font-size: 2.5rem;
   font-weight: 900;
-  color: var(--indigo);
+  color: var(--terracotta);
   line-height: 1.05;
   margin-bottom: 0.35rem;
   letter-spacing: -0.03em;
@@ -281,10 +285,10 @@ section {
 }
 
 /* --------------------------------------------------------------------------
-   6. Typography & Headings
+   6. Typography & Numbered Headings
    -------------------------------------------------------------------------- */
 .section-heading {
-  font-size: 2.125rem;
+  font-size: 2.25rem;
   font-weight: 900;
   letter-spacing: -0.02em;
   color: var(--ink-primary);
@@ -295,8 +299,14 @@ section {
   font-size: 1.35rem;
   font-weight: 800;
   color: var(--ink-primary);
-  margin: 2.5rem 0 1.25rem;
+  margin: 2.75rem 0 1.25rem;
   letter-spacing: -0.01em;
+}
+
+.heading-number {
+  color: var(--terracotta);
+  font-weight: 900;
+  margin-right: 0.4rem;
 }
 
 .lead-paragraph {
@@ -311,10 +321,10 @@ p {
 }
 
 /* --------------------------------------------------------------------------
-   7. Modern Floating Card Components
+   7. Modern Warm Floating Card Components
    -------------------------------------------------------------------------- */
 .callout-box {
-  background-color: #ffffff;
+  background-color: var(--bg-surface);
   border: 1px solid var(--line-light);
   border-radius: var(--radius-md);
   padding: 2rem 2.25rem;
@@ -363,7 +373,7 @@ p {
    8. Persona Floating Cards
    -------------------------------------------------------------------------- */
 .persona-card {
-  background-color: #ffffff;
+  background-color: var(--bg-surface);
   border: 1px solid var(--line-light);
   border-radius: var(--radius-lg);
   padding: 2.25rem;
@@ -389,16 +399,17 @@ p {
 }
 
 .persona-avatar {
-  width: 56px;
-  height: 56px;
+  width: 58px;
+  height: 58px;
   border-radius: var(--radius-full);
-  background: linear-gradient(135deg, var(--indigo), var(--violet));
+  background: linear-gradient(135deg, var(--terracotta), var(--amber));
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.35rem;
   font-weight: 800;
+  box-shadow: 0 4px 12px rgba(201, 93, 59, 0.25);
 }
 
 .persona-avatar.avatar-proto {
@@ -447,7 +458,8 @@ p {
 }
 
 .persona-block {
-  background-color: var(--bg-surface-alt);
+  background-color: var(--bg-main);
+  border: 1px solid var(--line-light);
   border-radius: var(--radius-md);
   padding: 1.5rem;
 }
@@ -475,7 +487,7 @@ p {
   content: "•";
   position: absolute;
   left: 0;
-  color: var(--indigo);
+  color: var(--terracotta);
   font-weight: bold;
   font-size: 1.2rem;
   line-height: 1;
@@ -485,8 +497,8 @@ p {
   display: inline-block;
   font-size: 0.72rem;
   font-weight: 800;
-  background-color: var(--indigo-light);
-  color: var(--indigo-dark);
+  background-color: var(--terracotta-light);
+  color: var(--terracotta);
   padding: 0.15rem 0.5rem;
   border-radius: 4px;
   margin-left: 0.35rem;
@@ -500,7 +512,7 @@ p {
   margin: 2rem 0;
   border: 1px solid var(--line-light);
   border-radius: var(--radius-md);
-  background-color: #ffffff;
+  background-color: var(--bg-surface);
   box-shadow: var(--shadow-card);
 }
 
@@ -528,11 +540,11 @@ td {
 }
 
 tr:nth-child(even) td {
-  background-color: var(--bg-surface-alt);
+  background-color: var(--bg-main);
 }
 
 tr:hover td {
-  background-color: var(--indigo-light);
+  background-color: var(--terracotta-light);
 }
 
 /* Status Badges */
@@ -556,7 +568,7 @@ tr:hover td {
    -------------------------------------------------------------------------- */
 .artefact-figure {
   margin: 2.5rem 0;
-  background-color: #ffffff;
+  background-color: var(--bg-surface);
   border-radius: var(--radius-md);
   padding: 0;
   box-shadow: var(--shadow-card);
@@ -575,7 +587,7 @@ figcaption {
   color: var(--ink-muted);
   text-align: center;
   line-height: 1.55;
-  background-color: #ffffff;
+  background-color: var(--bg-surface);
   border-top: 1px solid var(--line-light);
 }
 
@@ -584,24 +596,24 @@ figcaption strong {
 }
 
 /* --------------------------------------------------------------------------
-   11. IDE Dark Mode Window & Visual Tree Component (Clean Nested Explorer)
+   11. IDE Dark Mode Window & Visual Tree Component
    -------------------------------------------------------------------------- */
 .tree-window {
-  background-color: #0f172a;
+  background-color: #1a1715;
   border-radius: var(--radius-md);
   overflow: hidden;
   margin: 2rem 0;
   box-shadow: var(--shadow-card);
-  border: 1px solid #1e293b;
+  border: 1px solid #2d2824;
 }
 
 .tree-window-header {
-  background-color: #1e293b;
+  background-color: #26221f;
   padding: 0.75rem 1.25rem;
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  border-bottom: 1px solid #334155;
+  border-bottom: 1px solid #3b3530;
 }
 
 .window-dot {
@@ -617,7 +629,7 @@ figcaption strong {
 .window-title {
   font-size: 0.8125rem;
   font-weight: 700;
-  color: #94a3b8;
+  color: #a89f91;
   letter-spacing: 0.04em;
   margin-left: 0.5rem;
 }
@@ -635,7 +647,7 @@ figcaption strong {
   color: #ffffff;
   margin-bottom: 1.25rem;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid #334155;
+  border-bottom: 1px solid #3b3530;
 }
 
 .tree-branch {
@@ -660,7 +672,7 @@ figcaption strong {
 .tree-leaf-group {
   margin-left: 1rem;
   padding-left: 1.25rem;
-  border-left: 2px solid #334155;
+  border-left: 2px solid #3b3530;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -695,7 +707,7 @@ figcaption strong {
 }
 
 .story-card {
-  background-color: #ffffff;
+  background-color: var(--bg-surface);
   border: 1px solid var(--line-light);
   border-radius: var(--radius-md);
   padding: 1.75rem;
@@ -711,7 +723,7 @@ figcaption strong {
 .story-number {
   font-size: 0.8125rem;
   font-weight: 900;
-  color: var(--indigo);
+  color: var(--terracotta);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-bottom: 0.65rem;
@@ -728,7 +740,8 @@ figcaption strong {
 .story-address {
   font-size: 0.9rem;
   color: var(--ink-muted);
-  background-color: var(--bg-surface-alt);
+  background-color: var(--bg-main);
+  border: 1px solid var(--line-light);
   padding: 0.85rem 1rem;
   border-radius: var(--radius-sm);
 }
@@ -759,7 +772,7 @@ footer {
 
 .footer-col p, .footer-col li {
   font-size: 0.9375rem;
-  color: #94a3b8;
+  color: #a89f91;
   line-height: 1.65;
 }
 
@@ -773,10 +786,10 @@ footer {
 
 .footer-bottom {
   padding-top: 2.25rem;
-  border-top: 1px solid #1e293b;
+  border-top: 1px solid #3b3530;
   text-align: center;
   font-size: 0.875rem;
-  color: #64748b;
+  color: #6e675f;
 }
 
 /* --------------------------------------------------------------------------
