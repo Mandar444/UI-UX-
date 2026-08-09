@@ -20,6 +20,7 @@
       </a>
       <nav>
         <ul class="nav-menu">
+          <li><a href="#top">Overview</a></li>
           <li><a href="#phase1">Phase 1: Empathy &amp; Definition</a></li>
           <li><a href="#phase2">Phase 2: Ideate &amp; Evaluate</a></li>
           <li><a href="#phase3">Phase 3: Prioritization</a></li>
@@ -74,7 +75,7 @@
     <section id="phase1">
       <div class="container">
         <span class="phase-tag">Phase 1: Empathy &amp; Definition</span>
-        <h2 class="section-heading">Problem Space &amp; Proto-Persona</h2>
+        <h2 id="problem" class="section-heading">Problem Space &amp; Proto-Persona</h2>
         
         <p class="lead-paragraph">
           Campus classroom booking is currently fragmented across administrative emails, faculty contacts and physical office visits. Student organizers frequently begin the process without knowing which rooms are available, whether a request conflicts with another booking, or who holds responsibility for final sign-off.
@@ -127,7 +128,7 @@
         </div>
 
         <!-- Proto-Persona: Mandar -->
-        <h3 class="section-subheading">Assumption-Led Proto-Persona</h3>
+        <h3 id="proto-persona" class="section-subheading">Assumption-Led Proto-Persona</h3>
         <p>
           Before gathering research, we synthesized initial institutional assumptions into a proto-persona to establish clear hypotheses regarding user goals, behaviors, and anticipated pain points.
         </p>
@@ -179,7 +180,7 @@
         </article>
 
         <!-- Primary Research Findings -->
-        <h3 class="section-subheading">Primary Research &amp; Subgroup Analysis</h3>
+        <h3 id="research" class="section-subheading">Primary Research &amp; Subgroup Analysis</h3>
         <p class="lead-paragraph">
           Primary evidence was gathered through a structured participant survey comprising <strong>17 real responses</strong> (16 students, 1 club coordinator). Within the total cohort, <strong>12 respondents</strong> had direct experience attempting to book campus classrooms, while 5 had no prior booking experience.
         </p>
@@ -252,39 +253,8 @@
           </div>
         </div>
 
-        <!-- Authentic Survey Participant Quotations -->
-        <h3 class="section-subheading">Authentic Survey Participant Quotations</h3>
-        <p>Qualitative feedback provided by survey respondents reflects a urgent need for transparency, automation, and status tracking:</p>
-
-        <div class="quotes-grid">
-          <div class="quote-card">
-            <p class="quote-text">“Instant Approvals.”</p>
-            <p class="quote-author">— Survey Respondent R02</p>
-          </div>
-          <div class="quote-card">
-            <p class="quote-text">“A authority process that shows clear escalation and status of request rather than email.”</p>
-            <p class="quote-author">— Survey Respondent R04</p>
-          </div>
-          <div class="quote-card">
-            <p class="quote-text">“We can streamline the process in which we can understand the class availability on campus.”</p>
-            <p class="quote-author">— Survey Respondent R08, Club Coordinator</p>
-          </div>
-          <div class="quote-card">
-            <p class="quote-text">“Process should be less paper work and efficient.”</p>
-            <p class="quote-author">— Survey Respondent R09</p>
-          </div>
-          <div class="quote-card">
-            <p class="quote-text">“Make it convenient and involve less paperwork for booking.”</p>
-            <p class="quote-author">— Survey Respondent R12</p>
-          </div>
-          <div class="quote-card">
-            <p class="quote-text">“Better tracking application.”</p>
-            <p class="quote-author">— Survey Respondent R15</p>
-          </div>
-        </div>
-
         <!-- Research-Grounded User Persona: Mandar -->
-        <h3 class="section-subheading">Research-Grounded User Persona</h3>
+        <h3 id="final-persona" class="section-subheading">Research-Grounded User Persona</h3>
         <p>
           Unlike the initial proto-persona, this composite persona synthesizes empirical patterns and quantitative data derived directly from the survey responses.
         </p>
@@ -343,7 +313,7 @@
         </article>
 
         <!-- Empathy Map Artefact & Description -->
-        <h3 class="section-subheading">4-Quadrant Empathy Map</h3>
+        <h3 id="empathy-map" class="section-subheading">4-Quadrant Empathy Map</h3>
         <figure class="artefact-figure">
           <img src="assets/empathy-map.png" alt="Empathy map showing what student classroom-booking users say, think, do and feel. Users report hidden availability, repeated follow-up, uncertainty and frustration.">
           <figcaption>
@@ -352,7 +322,7 @@
         </figure>
 
         <!-- User Journey Map & Description -->
-        <h3 class="section-subheading">User Journey &amp; Emotion Line</h3>
+        <h3 id="journey-map" class="section-subheading">User Journey &amp; Emotion Line</h3>
         <figure class="artefact-figure">
           <img src="assets/journey-map.png" alt="User Journey Map showing 7 stages from Event Need Arises to Final Outcome. Scenario: A student organizer needs a classroom for a workshop next week.">
           <figcaption>
@@ -426,7 +396,7 @@
           </table>
         </div>
 
-        <div class="callout-box problem-box">
+        <div id="pain-point" class="callout-box problem-box">
           <h3 class="callout-title">The Core Pain Point</h3>
           <p class="lead-paragraph" style="margin-bottom: 0;">
             The core pain is not simply filling out a booking request. It is being unable to see reliable classroom availability or approval progress, which forces users to wait, follow up and sometimes discover conflicts too late to protect their event plans.
@@ -434,7 +404,7 @@
         </div>
 
         <!-- User Stories -->
-        <h3 class="section-subheading">User Stories Directly Responding to the Journey Dip</h3>
+        <h3 id="stories" class="section-subheading">User Stories Directly Responding to the Journey Dip</h3>
         <div class="user-stories-grid">
           <div class="story-card">
             <div class="story-number">User Story 1 · Discovery</div>
@@ -478,7 +448,7 @@
         <h2 class="section-heading">Information Architecture &amp; Tree Testing</h2>
 
         <!-- Feature Content Inventory -->
-        <h3 class="section-subheading">Complete 18-Feature Content Inventory</h3>
+        <h3 id="features" class="section-subheading">Complete 18-Feature Content Inventory</h3>
         <p>
           To prepare for card sorting and structural synthesis, 18 conceptual features and content items were identified and coded C01 through C18.
         </p>
@@ -516,7 +486,7 @@
         </div>
 
         <!-- Hybrid Card Sort -->
-        <h3 class="section-subheading">Hybrid Card Sort &amp; Mental Models</h3>
+        <h3 id="card-sort" class="section-subheading">Hybrid Card Sort &amp; Mental Models</h3>
         <p class="lead-paragraph">
           A hybrid card-sorting study was executed with <strong>10 real student participants</strong> (6 with booking experience). Participants categorized the 18 content items across four open/closed categories: <em>Find a Classroom, Book a Classroom, My Requests, Help and Rules</em>, plus custom user-created categories.
         </p>
@@ -529,7 +499,7 @@
         </figure>
 
         <!-- IA V1 Tree Visual & Description -->
-        <h3 class="section-subheading">Initial Information Architecture (IA V1)</h3>
+        <h3 id="v1-ia" class="section-subheading">Initial Information Architecture (IA V1)</h3>
         <figure class="artefact-figure">
           <img src="assets/ia-v1.png" alt="Initial Information Architecture V1 hierarchy diagram showing 4 main branches: Find a Classroom, Book a Classroom, My Bookings, and Help and Rules.">
           <figcaption>
@@ -590,7 +560,7 @@
         </div>
 
         <!-- Tree Testing Diagnostics & Description -->
-        <h3 class="section-subheading">Tree Testing &amp; Diagnostics</h3>
+        <h3 id="tree-test" class="section-subheading">Tree Testing &amp; Diagnostics</h3>
         <p class="lead-paragraph">
           To validate whether users could navigate IA V1, a text-based tree test was conducted with <strong>5 real students</strong> across <strong>5 realistic scenarios</strong> (25 total menu navigation decisions).
         </p>
@@ -603,7 +573,7 @@
         </figure>
 
         <!-- IA V2 Structural Pivot -->
-        <h3 class="section-subheading">Final Validated Information Architecture (IA V2)</h3>
+        <h3 id="ia-pivot" class="section-subheading">Final Validated Information Architecture (IA V2)</h3>
         <div class="callout-box pivot-box">
           <h4 class="callout-title">The IA Structural Pivot Rationale (V1 &rarr; V2)</h4>
           <p style="margin-bottom: 0;">
@@ -611,7 +581,7 @@
           </p>
         </div>
 
-        <figure class="artefact-figure">
+        <figure id="v2-ia" class="artefact-figure">
           <img src="assets/ia-v2.png" alt="Revised Information Architecture V2 structural diagram. Merges Find and Book into a single top-level category and renames My Bookings to My Requests and Status.">
           <figcaption>
             <strong>Figure 6: IA V2 Blueprint Artefact.</strong> Validated Information Architecture blueprint establishing 3 top-level categories and refined second-level groupings.
@@ -690,7 +660,7 @@
           All 18 features were evaluated using MoSCoW rules to isolate the minimum viable set of capabilities required to deliver transparent room booking.
         </p>
 
-        <figure class="artefact-figure">
+        <figure id="moscow" class="artefact-figure">
           <img src="assets/moscow-matrix.png" alt="MoSCoW prioritization grid dividing 18 features into Must Have (4), Should Have (8), Could Have (4), and Won't Have in this MVP (2).">
           <figcaption>
             <strong>Figure 7: MoSCoW Prioritization Grid Artefact.</strong> Categorization grid isolating 4 MVP Must-Haves to form the transparent feedback loop.
@@ -750,7 +720,7 @@
         </div>
 
         <!-- DFV Matrix Evaluation -->
-        <h3 class="section-subheading">Desirability, Feasibility, Viability (DFV) Evaluation</h3>
+        <h3 id="dfv-matrix" class="section-subheading">Desirability, Feasibility, Viability (DFV) Evaluation</h3>
         <p class="lead-paragraph">
           To determine the 4th and final Must-Have feature, a rigorous DFV evaluation (1–5 scale) was conducted between <strong>C11 Check Approval Status</strong> and <strong>C12 Approval or Rejection Notification</strong>.
         </p>
@@ -763,7 +733,7 @@
         </figure>
 
         <!-- Final MVP Definition -->
-        <h3 class="section-subheading">Final MVP Definition</h3>
+        <h3 id="final-mvp" class="section-subheading">Final MVP Definition</h3>
         <p class="lead-paragraph">
           The validated Minimum Viable Product (MVP) consists strictly of the <strong>4 core Must-Have capabilities</strong> needed to establish a transparent classroom booking loop.
         </p>
@@ -800,6 +770,17 @@
               Provides real-time visibility into request approval states (Pending, Approved, Rejected) to eliminate uncertainty.
             </p>
           </div>
+        </div>
+
+        <!-- Learnings & Project Summary -->
+        <h3 id="learnings" class="section-subheading">Key Strategic Learnings &amp; Project Summary</h3>
+        <div class="callout-box pivot-box">
+          <h4 class="callout-title">Core UX Research &amp; Architectural Learnings</h4>
+          <ol style="margin-left: 1.5rem; margin-bottom: 0;">
+            <li><strong>Structure Precedes Interface:</strong> Resolving boundary confusion during card sorting and tree testing prevents superficial UI fixes that mask underlying taxonomic flaws.</li>
+            <li><strong>Subjective Satisfaction Fallacy:</strong> Users frequently report high satisfaction even when navigating incorrect paths (Tree Test Task 1). Empirical navigation tracking is mandatory.</li>
+            <li><strong>Ruthless Scope Discipline:</strong> Technical capabilities (like request escalation) cannot precede institutional SLA policies. The MVP must focus strictly on the transparent status loop.</li>
+          </ol>
         </div>
 
         <!-- Research Data Limitations -->
