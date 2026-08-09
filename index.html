@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Booking a Classroom Shouldn’entered Require Guesswork — Editorial UX Research Case Study, Sensemaking, Information Architecture, Card Sorting, Tree Testing and MVP Definition.">
+  <meta name="description" content="Booking a Classroom Shouldn’t Require Guesswork — Editorial UX Research Case Study, Sensemaking, Information Architecture, Card Sorting, Tree Testing and MVP Definition.">
   <title>Booking a Classroom Shouldn’t Require Guesswork | Editorial UX Case Study</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -283,7 +283,7 @@
           </div>
         </div>
 
-        <!-- Research-Grounded User Persona: Ananya -->
+        <!-- Research-Grounded User Persona: Mandar -->
         <h3 class="section-subheading">Research-Grounded User Persona</h3>
         <p>
           Unlike the initial proto-persona, this composite persona synthesizes empirical patterns and quantitative data derived directly from the survey responses.
@@ -292,9 +292,9 @@
         <article class="persona-card">
           <div class="persona-header">
             <div class="persona-avatar-wrapper">
-              <div class="persona-avatar">AN</div>
+              <div class="persona-avatar">MA</div>
               <div>
-                <h3 class="persona-name">Research Persona: Ananya</h3>
+                <h3 class="persona-name">Research Persona: Mandar</h3>
                 <p class="persona-role">Composite Student Organizer</p>
               </div>
             </div>
@@ -302,7 +302,7 @@
           </div>
 
           <p style="font-size: 0.9rem; color: var(--ink-muted); margin-bottom: 1.25rem;">
-            * <em>“Ananya” is an explicit composite label. Academic major, age, and demographic metrics were intentionally uncollected in the primary survey and are not fabricated.</em>
+            * <em>“Mandar” is an explicit composite label. Academic major, age, and demographic metrics were intentionally uncollected in the primary survey and are not fabricated.</em>
           </p>
 
           <div class="persona-grid">
@@ -354,9 +354,9 @@
         <!-- User Journey Map & Description -->
         <h3 class="section-subheading">User Journey &amp; Emotion Line</h3>
         <figure class="artefact-figure">
-          <img src="assets/journey-map.png" alt="User Journey Map showing 7 stages from Event Need Arises to Final Outcome. The emotion line drops to -5 at Stage 6 when booking conflict is discovered.">
+          <img src="assets/journey-map.png" alt="User Journey Map showing 7 stages from Event Need Arises to Final Outcome. Scenario: A student organizer needs a classroom for a workshop next week.">
           <figcaption>
-            <strong>Figure 2: User Journey Map &amp; Emotion Curve.</strong> Tracing 7 chronological stages from event definition (+2 score) to late conflict discovery (-5 score low point).
+            <strong>Figure 2: User Journey Map &amp; Emotion Curve.</strong> Tracing Mandar's 7 chronological stages from event definition (+2 score) to late conflict discovery (-5 score low point).
           </figcaption>
         </figure>
 
@@ -376,47 +376,47 @@
               <tr>
                 <td><strong>1. Event Need Arises</strong></td>
                 <td>Defines event, date, time &amp; expected attendance</td>
-                <td>“I should secure a classroom early.”</td>
+                <td>“This should be manageable.”</td>
                 <td>No friction yet</td>
                 <td><span class="badge badge-green">+2 (Hopeful)</span></td>
               </tr>
               <tr>
                 <td><strong>2. Search Availability</strong></td>
-                <td>Asks classmates or checks informal schedules</td>
-                <td>“Which room is actually free?”</td>
+                <td>Asks around and checks informal schedules</td>
+                <td>“Which classroom is actually free?”</td>
                 <td>No reliable availability source</td>
                 <td><span class="badge badge-blue">0 (Uncertain)</span></td>
               </tr>
               <tr>
                 <td><strong>3. Choose Channel</strong></td>
-                <td>Decides between faculty, email or office visit</td>
-                <td>“Who am I supposed to contact?”</td>
+                <td>Chooses email, faculty contact or office visit</td>
+                <td>“Who should I contact?”</td>
                 <td>Fragmented administrative ownership</td>
                 <td><span class="badge badge-amber">-1 (Confused)</span></td>
               </tr>
               <tr>
                 <td><strong>4. Submit Request</strong></td>
-                <td>Sends date, time and purpose details</td>
+                <td>Shares date, time and event purpose</td>
                 <td>“I hope I included everything.”</td>
                 <td>Inconsistent process &amp; paperwork</td>
-                <td><span class="badge badge-blue">0 (Cautious)</span></td>
+                <td><span class="badge badge-blue">0 (Cautiously Hopeful)</span></td>
               </tr>
               <tr>
                 <td><strong>5. Wait &amp; Follow Up</strong></td>
-                <td>Checks inbox repeatedly, sends reminders</td>
-                <td>“Has anybody opened my request?”</td>
+                <td>Checks messages and sends reminders</td>
+                <td>“Is anyone processing this?”</td>
                 <td>Zero status visibility while waiting</td>
                 <td><span class="badge badge-amber">-3 (Anxious)</span></td>
               </tr>
               <tr style="background-color: var(--rose-light);">
                 <td><strong>6. Conflict Discovered</strong></td>
-                <td>Learns room is booked or request delayed</td>
-                <td>“Now I may have to change the whole event!”</td>
-                <td><strong>Conflict discovered too late</strong></td>
-                <td><span class="badge badge-danger" style="font-size:0.85rem;">-5 (LOWEST DIP)</span></td>
+                <td>Searches for another room or postpones</td>
+                <td>“Why did I only learn this now?”</td>
+                <td><strong>Conflict discovered after waiting</strong></td>
+                <td><span class="badge badge-danger" style="font-size:0.85rem;">-5 (LOWEST POINT)</span></td>
               </tr>
               <tr>
-                <td><strong>7. Receive Outcome</strong></td>
+                <td><strong>7. Final Outcome</strong></td>
                 <td>Confirms room or updates participants</td>
                 <td>“At least I finally know.”</td>
                 <td>Recovery still costs time &amp; effort</td>
@@ -439,7 +439,7 @@
           <div class="story-card">
             <div class="story-number">User Story 1 · Discovery</div>
             <p class="story-text">
-              “As a student organizer, I want to see which classrooms are available for my required date and time so that I can choose a realistic option without contacting multiple people.”
+              “As Mandar, a student organizer, I want to see which classrooms are available for my required date and time so that I can choose a realistic option without contacting multiple people.”
             </p>
             <div class="story-address">
               <strong>Directly Responds To:</strong> Stage 2 &amp; 6 Journey Friction (Hidden availability &amp; late conflict discovery).
@@ -449,7 +449,7 @@
           <div class="story-card">
             <div class="story-number">User Story 2 · Submission</div>
             <p class="story-text">
-              “As a student organizer, I want to submit one structured classroom request so that I do not have to rely on inconsistent emails, faculty messages or paperwork.”
+              “As Mandar, a student organizer, I want to submit one structured classroom request so that I do not have to rely on inconsistent emails, faculty messages or paperwork.”
             </p>
             <div class="story-address">
               <strong>Directly Responds To:</strong> Stage 3 &amp; 4 Journey Friction (Fragmented channels &amp; paper bureaucracy).
@@ -459,7 +459,7 @@
           <div class="story-card">
             <div class="story-number">User Story 3 · Status Tracking</div>
             <p class="story-text">
-              “As a requester, I want to check the approval status of my request so that I know whether to wait, follow up or adjust my event plans.”
+              “As Mandar, a requester, I want to check the approval status of my request so that I know whether to wait, follow up or adjust my event plans.”
             </p>
             <div class="story-address">
               <strong>Directly Responds To:</strong> Stage 5 &amp; 6 Journey Friction (Approval uncertainty &amp; severe anxiety dip).
