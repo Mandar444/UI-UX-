@@ -1,0 +1,793 @@
+/* ==========================================================================
+   UI/UX Mid-Term Examination Case Study — Modern Editorial Design System
+   Project: Booking a Classroom Shouldn’t Require Guesswork
+   Constraint: Pure Vanilla CSS (No Frameworks, No JS, System Typography)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. CSS Custom Properties / Design Tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Canvas & Surface Colors (Pure White Canvas) */
+  --bg-main: #ffffff;
+  --bg-surface: #ffffff;
+  --bg-surface-alt: #f8fafc;
+
+  /* Typography Colors */
+  --ink-primary: #0f172a;
+  --ink-secondary: #334155;
+  --ink-muted: #64748b;
+  --ink-light: #94a3b8;
+
+  /* Structural Lines & Subtle Borders */
+  --line-light: #f1f5f9;
+  --line-strong: #e2e8f0;
+
+  /* Brand & Accent Palette */
+  --indigo: #2563eb;
+  --indigo-dark: #1d4ed8;
+  --indigo-light: #eff6ff;
+
+  --emerald: #059669;
+  --emerald-light: #ecfdf5;
+
+  --violet: #7c3aed;
+  --violet-light: #f5f3ff;
+
+  --amber: #d97706;
+  --amber-light: #fffbeb;
+
+  --rose: #e11d48;
+  --rose-light: #fff1f2;
+
+  /* Typography Stack */
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Spacing & Layout */
+  --max-width: 1140px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Modern Floating Shadows */
+  --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+  --shadow-hover: 0 12px 28px -4px rgba(15, 23, 42, 0.1), 0 4px 10px -2px rgba(15, 23, 42, 0.04);
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & Pure White Base
+   -------------------------------------------------------------------------- */
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #ffffff;
+  color: var(--ink-secondary);
+  font-family: var(--font-sans);
+  font-size: 1.0625rem; /* ~17px */
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible {
+  outline: 3px solid var(--indigo);
+  outline-offset: 3px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--indigo);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--indigo-dark);
+}
+
+/* --------------------------------------------------------------------------
+   3. Container & Section Layout
+   -------------------------------------------------------------------------- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.75rem;
+}
+
+section {
+  padding: 4.5rem 0;
+  border-bottom: 1px solid var(--line-light);
+  background-color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   4. Glassmorphism Sticky Navigation Header
+   -------------------------------------------------------------------------- */
+.nav-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line-light);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.85rem 1.75rem;
+}
+
+.nav-title {
+  font-size: 0.875rem;
+  font-weight: 800;
+  color: var(--ink-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-title-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--indigo);
+  border-radius: var(--radius-full);
+}
+
+.nav-title span {
+  color: var(--ink-muted);
+  font-weight: 500;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+  overflow-x: auto;
+}
+
+.nav-menu a {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  text-decoration: none;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--ink-primary);
+  background-color: var(--bg-surface-alt);
+}
+
+/* --------------------------------------------------------------------------
+   5. Hero Section
+   -------------------------------------------------------------------------- */
+.hero-section {
+  padding: 5rem 0 4rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--line-light);
+}
+
+.phase-tag {
+  display: inline-block;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  color: var(--indigo);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.85rem;
+  background-color: var(--indigo-light);
+  border-radius: var(--radius-full);
+  margin-bottom: 1.25rem;
+}
+
+.hero-title {
+  font-size: 3.125rem;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--ink-primary);
+  margin-bottom: 1.25rem;
+  max-width: 960px;
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--ink-muted);
+  margin-bottom: 2rem;
+  max-width: 900px;
+}
+
+.hero-description {
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: var(--ink-secondary);
+  max-width: 900px;
+  margin-bottom: 2.75rem;
+  padding-left: 1.5rem;
+  border-left: 4px solid var(--indigo);
+}
+
+/* Metrics Floating Cards */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.metric-card {
+  background-color: #ffffff;
+  border: 1px solid var(--line-light);
+  border-radius: var(--radius-md);
+  padding: 1.6rem 1.25rem;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.metric-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.metric-number {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--indigo);
+  line-height: 1.05;
+  margin-bottom: 0.35rem;
+  letter-spacing: -0.03em;
+}
+
+.metric-label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* --------------------------------------------------------------------------
+   6. Typography & Headings
+   -------------------------------------------------------------------------- */
+.section-heading {
+  font-size: 2.125rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: var(--ink-primary);
+  margin-bottom: 1.25rem;
+}
+
+.section-subheading {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--ink-primary);
+  margin: 2.5rem 0 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.lead-paragraph {
+  font-size: 1.2rem;
+  line-height: 1.75;
+  color: var(--ink-secondary);
+  margin-bottom: 1.5rem;
+}
+
+p {
+  margin-bottom: 1.25rem;
+}
+
+/* --------------------------------------------------------------------------
+   7. Modern Floating Card Components
+   -------------------------------------------------------------------------- */
+.callout-box {
+  background-color: #ffffff;
+  border: 1px solid var(--line-light);
+  border-radius: var(--radius-md);
+  padding: 2rem 2.25rem;
+  margin: 2rem 0;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.callout-box:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.callout-box.problem-box {
+  background-color: var(--rose-light);
+  border: 1px solid rgba(225, 29, 72, 0.15);
+}
+
+.callout-box.hmw-box {
+  background-color: var(--violet-light);
+  border: 1px solid rgba(124, 58, 237, 0.15);
+}
+
+.callout-box.pivot-box {
+  background-color: var(--emerald-light);
+  border: 1px solid rgba(5, 150, 105, 0.15);
+}
+
+.callout-box.warning-box {
+  background-color: var(--amber-light);
+  border: 1px solid rgba(217, 119, 6, 0.15);
+}
+
+.callout-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.problem-box .callout-title { color: var(--rose); }
+.hmw-box .callout-title { color: var(--violet); }
+.pivot-box .callout-title { color: var(--emerald); }
+.warning-box .callout-title { color: var(--amber); }
+
+/* --------------------------------------------------------------------------
+   8. Persona Floating Cards
+   -------------------------------------------------------------------------- */
+.persona-card {
+  background-color: #ffffff;
+  border: 1px solid var(--line-light);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  margin: 2.25rem 0;
+  box-shadow: var(--shadow-card);
+}
+
+.persona-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line-light);
+  margin-bottom: 1.75rem;
+}
+
+.persona-avatar-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.persona-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(135deg, var(--indigo), var(--violet));
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+.persona-avatar.avatar-proto {
+  background: linear-gradient(135deg, var(--amber), #f59e0b);
+}
+
+.persona-name {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--ink-primary);
+  line-height: 1.2;
+}
+
+.persona-role {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+}
+
+.persona-tag {
+  display: inline-block;
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tag-proto {
+  background-color: var(--amber-light);
+  color: var(--amber);
+  border: 1px solid rgba(217, 119, 6, 0.2);
+}
+
+.tag-research {
+  background-color: var(--emerald-light);
+  color: var(--emerald);
+  border: 1px solid rgba(5, 150, 105, 0.2);
+}
+
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.persona-block {
+  background-color: var(--bg-surface-alt);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+.persona-block h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--ink-primary);
+  margin-bottom: 1rem;
+}
+
+.persona-block ul {
+  list-style: none;
+}
+
+.persona-block li {
+  font-size: 0.95rem;
+  position: relative;
+  padding-left: 1.35rem;
+  margin-bottom: 0.65rem;
+  line-height: 1.6;
+}
+
+.persona-block li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--indigo);
+  font-weight: bold;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.evidence-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  background-color: var(--indigo-light);
+  color: var(--indigo-dark);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-left: 0.35rem;
+}
+
+/* --------------------------------------------------------------------------
+   9. Clean Modern Tables
+   -------------------------------------------------------------------------- */
+.table-wrapper {
+  overflow-x: auto;
+  margin: 2rem 0;
+  border: 1px solid var(--line-light);
+  border-radius: var(--radius-md);
+  background-color: #ffffff;
+  box-shadow: var(--shadow-card);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+th {
+  background-color: var(--ink-primary);
+  color: #ffffff;
+  font-weight: 800;
+  padding: 1rem 1.15rem;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+td {
+  padding: 1rem 1.15rem;
+  border-bottom: 1px solid var(--line-light);
+  vertical-align: top;
+}
+
+tr:nth-child(even) td {
+  background-color: var(--bg-surface-alt);
+}
+
+tr:hover td {
+  background-color: var(--indigo-light);
+}
+
+/* Status Badges */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-xs);
+  font-size: 0.78125rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.badge-green { background-color: var(--emerald-light); color: var(--emerald); }
+.badge-amber { background-color: var(--amber-light); color: var(--amber); }
+.badge-danger { background-color: var(--rose-light); color: var(--rose); }
+.badge-blue { background-color: var(--indigo-light); color: var(--indigo); }
+
+/* --------------------------------------------------------------------------
+   10. Image Artefacts Container
+   -------------------------------------------------------------------------- */
+.artefact-figure {
+  margin: 2.5rem 0;
+  background-color: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 0;
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  border: 1px solid var(--line-light);
+}
+
+.artefact-figure img {
+  width: 100%;
+  display: block;
+}
+
+figcaption {
+  padding: 1.25rem 1.5rem;
+  font-size: 0.9375rem;
+  color: var(--ink-muted);
+  text-align: center;
+  line-height: 1.55;
+  background-color: #ffffff;
+  border-top: 1px solid var(--line-light);
+}
+
+figcaption strong {
+  color: var(--ink-primary);
+}
+
+/* --------------------------------------------------------------------------
+   11. IDE Dark Mode Window & Visual Tree Component (Clean Nested Explorer)
+   -------------------------------------------------------------------------- */
+.tree-window {
+  background-color: #0f172a;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin: 2rem 0;
+  box-shadow: var(--shadow-card);
+  border: 1px solid #1e293b;
+}
+
+.tree-window-header {
+  background-color: #1e293b;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-bottom: 1px solid #334155;
+}
+
+.window-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: var(--radius-full);
+}
+
+.dot-red { background-color: #ef4444; }
+.dot-yellow { background-color: #f59e0b; }
+.dot-green { background-color: #10b981; }
+
+.window-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.04em;
+  margin-left: 0.5rem;
+}
+
+.tree-content {
+  padding: 1.75rem 2rem;
+  color: #f8fafc;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.tree-root {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #334155;
+}
+
+.tree-branch {
+  margin-bottom: 1.5rem;
+  padding-left: 0.5rem;
+}
+
+.tree-folder {
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 0.65rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.text-blue { color: #38bdf8; }
+.text-amber { color: #fbbf24; }
+.text-green { color: #34d399; }
+.text-purple { color: #c084fc; }
+
+.tree-leaf-group {
+  margin-left: 1rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid #334155;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.tree-subfolder {
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-top: 0.4rem;
+}
+
+.tree-file {
+  color: #cbd5e1;
+  font-size: 0.925rem;
+  padding: 0.15rem 0;
+}
+
+.tree-file-indent {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  padding-left: 1rem;
+}
+
+/* --------------------------------------------------------------------------
+   12. User Stories Grid
+   -------------------------------------------------------------------------- */
+.user-stories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 1.75rem;
+  margin: 2.25rem 0;
+}
+
+.story-card {
+  background-color: #ffffff;
+  border: 1px solid var(--line-light);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.story-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.story-number {
+  font-size: 0.8125rem;
+  font-weight: 900;
+  color: var(--indigo);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.65rem;
+}
+
+.story-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ink-primary);
+  margin-bottom: 1.25rem;
+  line-height: 1.55;
+}
+
+.story-address {
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  background-color: var(--bg-surface-alt);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+}
+
+/* --------------------------------------------------------------------------
+   13. Footer Section
+   -------------------------------------------------------------------------- */
+footer {
+  background-color: var(--ink-primary);
+  color: #ffffff;
+  padding: 4.5rem 0 3rem;
+  margin-top: 4.5rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.footer-col h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+  color: #ffffff;
+}
+
+.footer-col p, .footer-col li {
+  font-size: 0.9375rem;
+  color: #94a3b8;
+  line-height: 1.65;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col li {
+  margin-bottom: 0.65rem;
+}
+
+.footer-bottom {
+  padding-top: 2.25rem;
+  border-top: 1px solid #1e293b;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* --------------------------------------------------------------------------
+   14. Responsive Media Queries
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.15rem; }
+  .hero-subtitle { font-size: 1.2rem; }
+  .section-heading { font-size: 1.65rem; }
+  .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+  .nav-menu { display: none; }
+  .persona-grid { grid-template-columns: 1fr; }
+  .user-stories-grid { grid-template-columns: 1fr; }
+}

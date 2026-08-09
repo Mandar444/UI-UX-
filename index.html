@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Booking a Classroom Shouldn’entered Require Guesswork — Editorial UX Research Case Study, Sensemaking, Information Architecture, Card Sorting, Tree Testing and MVP Definition.">
+  <title>Booking a Classroom Shouldn’t Require Guesswork | Editorial UX Case Study</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Top Sticky Editorial Navigation Header
+       ========================================================================== -->
+  <header class="nav-header">
+    <div class="nav-container">
+      <a href="#top" class="nav-title">
+        <span class="nav-title-dot"></span>
+        UX Research Case Study <span>· Mid-Term Examination</span>
+      </a>
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#phase1">Phase 1: Empathy &amp; Definition</a></li>
+          <li><a href="#phase2">Phase 2: Ideate &amp; Evaluate</a></li>
+          <li><a href="#phase3">Phase 3: Prioritization</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ==========================================================================
+         Hero Section & Overview
+         ========================================================================== -->
+    <header class="hero-section">
+      <div class="container">
+        <span class="phase-tag">UX Research &amp; Information Architecture</span>
+        <h1 class="hero-title">Booking a Classroom Shouldn’t Require Guesswork</h1>
+        <p class="hero-subtitle">Researching and restructuring the fragmented campus classroom-booking experience</p>
+        
+        <p class="hero-description">
+          Student organizers currently depend on administration emails, faculty contacts and office visits to book classrooms. Availability is unclear, approval is slow, and users cannot easily tell what is happening after submitting a request. This project uses research, card sorting, tree testing and prioritization to create a validated structural blueprint before any interface is designed.
+        </p>
+
+        <!-- Project Evidence Dashboard -->
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-number">17</div>
+            <div class="metric-label">Survey Respondents</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number">10</div>
+            <div class="metric-label">Card-Sort Participants</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number">5</div>
+            <div class="metric-label">Tree-Test Participants</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number">18</div>
+            <div class="metric-label">Features Evaluated</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number">4</div>
+            <div class="metric-label">MVP Must-Haves</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ==========================================================================
+         PHASE 1: EMPATHY AND DEFINITION
+         ========================================================================== -->
+    <section id="phase1">
+      <div class="container">
+        <span class="phase-tag">Phase 1: Empathy &amp; Definition</span>
+        <h2 class="section-heading">Problem Space &amp; Proto-Persona</h2>
+        
+        <p class="lead-paragraph">
+          Campus classroom booking is currently fragmented across administrative emails, faculty contacts and physical office visits. Student organizers frequently begin the process without knowing which rooms are available, whether a request conflicts with another booking, or who holds responsibility for final sign-off.
+        </p>
+
+        <!-- Final Problem Statement Card -->
+        <div class="callout-box problem-box">
+          <h3 class="callout-title">Final Problem Statement</h3>
+          <p class="lead-paragraph" style="margin-bottom: 0;">
+            <strong>Student organizers need a dependable way to identify suitable available classrooms and understand approval progress because the current email, faculty and office-based process hides availability and status, leading to repeated follow-ups, booking conflicts and cancelled or postponed events.</strong>
+          </p>
+        </div>
+
+        <!-- How Might We Card -->
+        <div class="callout-box hmw-box">
+          <h3 class="callout-title">How Might We Statement</h3>
+          <p class="lead-paragraph" style="margin-bottom: 0;">
+            <strong>How might we help student organizers find a suitable available classroom and track its approval without relying on repeated emails, faculty messages or office visits?</strong>
+          </p>
+        </div>
+
+        <h3 class="section-subheading">Core Structural Distinctions</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Dimension</th>
+                <th>Current State Observation</th>
+                <th>Architectural Implication</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Root Problem</strong></td>
+                <td>Availability and approval status information are completely hidden from requesters.</td>
+                <td>System must expose room schedules and transparent status states.</td>
+              </tr>
+              <tr>
+                <td><strong>Consequences</strong></td>
+                <td>Wasted student time, administrative overload, booking conflicts, cancelled/postponed events.</td>
+                <td>Solution must protect event planning dates through early conflict detection.</td>
+              </tr>
+              <tr>
+                <td><strong>Structural Response</strong></td>
+                <td>Create a unified Information Architecture connecting room discovery directly to booking and status tracking.</td>
+                <td>Structure precedes interface; focus on mental model taxonomy before screens.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Proto-Persona: Mandar -->
+        <h3 class="section-subheading">Assumption-Led Proto-Persona</h3>
+        <p>
+          Before gathering research, we synthesized initial institutional assumptions into a proto-persona to establish clear hypotheses regarding user goals, behaviors, and anticipated pain points.
+        </p>
+
+        <article class="persona-card">
+          <div class="persona-header">
+            <div class="persona-avatar-wrapper">
+              <div class="persona-avatar avatar-proto">MA</div>
+              <div>
+                <h3 class="persona-name">Proto-Persona: Mandar</h3>
+                <p class="persona-role">The Assumed Student Organizer</p>
+              </div>
+            </div>
+            <span class="persona-tag tag-proto">Created Before Research — Based on Assumptions</span>
+          </div>
+
+          <div class="persona-grid">
+            <div class="persona-block">
+              <h4>Context &amp; Role</h4>
+              <ul>
+                <li>Student who occasionally organizes club meetings, workshops or group activities.</li>
+                <li>Needs classrooms outside normal academic timetable hours.</li>
+                <li>Starts by asking peers, emailing administration, or messaging faculty contacts.</li>
+              </ul>
+            </div>
+
+            <div class="persona-block">
+              <h4>Assumed Expectations</h4>
+              <ul>
+                <li>Assumes an available classroom can be identified quickly.</li>
+                <li>Expects approval to happen asynchronously through email.</li>
+                <li>Becomes frustrated by unclear administrative ownership and slow replies.</li>
+                <li>Wants faster approval and fewer paperwork steps.</li>
+                <li>Is comfortable utilizing modern digital web tools.</li>
+              </ul>
+            </div>
+
+            <div class="persona-block">
+              <h4>Assumptions to Validate</h4>
+              <ul>
+                <li>Classroom availability is the primary booking difficulty.</li>
+                <li>Email is the most common booking channel used by students.</li>
+                <li>Approval uncertainty causes repeated manual follow-ups.</li>
+                <li>Users desire a single digital process rather than multi-channel contacts.</li>
+                <li>Student event organizers represent the primary affected segment.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Primary Research Findings -->
+        <h3 class="section-subheading">Primary Research &amp; Subgroup Analysis</h3>
+        <p class="lead-paragraph">
+          Primary evidence was gathered through a structured participant survey comprising <strong>17 real responses</strong> (16 students, 1 club coordinator). Within the total cohort, <strong>12 respondents</strong> had direct experience attempting to book campus classrooms, while 5 had no prior booking experience.
+        </p>
+
+        <!-- Booking Channels Table -->
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Booking Channel Utilized</th>
+                <th>Respondent Count</th>
+                <th>Percentage of Total Sample</th>
+                <th>Channel Characteristics &amp; Operational Friction</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Administration Email</strong></td>
+                <td>7 of 17</td>
+                <td>41.2%</td>
+                <td>Unstructured threads; no automatic logging or SLA tracking.</td>
+              </tr>
+              <tr>
+                <td><strong>Contact Faculty Member</strong></td>
+                <td>6 of 17</td>
+                <td>35.3%</td>
+                <td>Relies on personal faculty favors; bypasses central room oversight.</td>
+              </tr>
+              <tr>
+                <td><strong>Visit Administration Office</strong></td>
+                <td>4 of 17</td>
+                <td>23.5%</td>
+                <td>Requires physical travel during working hours; paper-based queues.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout-box warning-box">
+          <h4 class="callout-title">Methodological Justification for Subgroup Isolation</h4>
+          <p>
+            Participants without prior booking experience (5 respondents) occasionally rated process satisfaction higher because they had never navigated administrative hurdles. Therefore, to ensure data integrity, all pain statistics and satisfaction calculations focus exclusively on the <strong>12 respondents with direct booking experience</strong>.
+          </p>
+        </div>
+
+        <div class="metrics-grid" style="margin-bottom: 2.5rem;">
+          <div class="metric-card">
+            <div class="metric-number" style="color: var(--rose);">75%</div>
+            <div class="metric-label">Hidden Availability (9/12)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number" style="color: var(--rose);">67%</div>
+            <div class="metric-label">Experienced Slow Approval (8/12)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number" style="color: var(--amber);">58%</div>
+            <div class="metric-label">Process Took &gt;30 Mins / Days (7/12)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number" style="color: var(--rose);">58%</div>
+            <div class="metric-label">Cancelled / Postponed Events (7/12)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number" style="color: var(--rose);">67%</div>
+            <div class="metric-label">Rated Process 1 or 2 out of 5 (8/12)</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-number" style="color: var(--violet);">2.42</div>
+            <div class="metric-label">Avg Satisfaction (/5 Score)</div>
+          </div>
+        </div>
+
+        <!-- Authentic Survey Participant Quotations -->
+        <h3 class="section-subheading">Authentic Survey Participant Quotations</h3>
+        <p>Qualitative feedback provided by survey respondents reflects a urgent need for transparency, automation, and status tracking:</p>
+
+        <div class="quotes-grid">
+          <div class="quote-card">
+            <p class="quote-text">“Instant Approvals.”</p>
+            <p class="quote-author">— Survey Respondent R02</p>
+          </div>
+          <div class="quote-card">
+            <p class="quote-text">“A authority process that shows clear escalation and status of request rather than email.”</p>
+            <p class="quote-author">— Survey Respondent R04</p>
+          </div>
+          <div class="quote-card">
+            <p class="quote-text">“We can streamline the process in which we can understand the class availability on campus.”</p>
+            <p class="quote-author">— Survey Respondent R08, Club Coordinator</p>
+          </div>
+          <div class="quote-card">
+            <p class="quote-text">“Process should be less paper work and efficient.”</p>
+            <p class="quote-author">— Survey Respondent R09</p>
+          </div>
+          <div class="quote-card">
+            <p class="quote-text">“Make it convenient and involve less paperwork for booking.”</p>
+            <p class="quote-author">— Survey Respondent R12</p>
+          </div>
+          <div class="quote-card">
+            <p class="quote-text">“Better tracking application.”</p>
+            <p class="quote-author">— Survey Respondent R15</p>
+          </div>
+        </div>
+
+        <!-- Research-Grounded User Persona: Ananya -->
+        <h3 class="section-subheading">Research-Grounded User Persona</h3>
+        <p>
+          Unlike the initial proto-persona, this composite persona synthesizes empirical patterns and quantitative data derived directly from the survey responses.
+        </p>
+
+        <article class="persona-card">
+          <div class="persona-header">
+            <div class="persona-avatar-wrapper">
+              <div class="persona-avatar">AN</div>
+              <div>
+                <h3 class="persona-name">Research Persona: Ananya</h3>
+                <p class="persona-role">Composite Student Organizer</p>
+              </div>
+            </div>
+            <span class="persona-tag tag-research">Validated by Research</span>
+          </div>
+
+          <p style="font-size: 0.9rem; color: var(--ink-muted); margin-bottom: 1.25rem;">
+            * <em>“Ananya” is an explicit composite label. Academic major, age, and demographic metrics were intentionally uncollected in the primary survey and are not fabricated.</em>
+          </p>
+
+          <div class="persona-grid">
+            <div class="persona-block">
+              <h4>Validated Goals</h4>
+              <ul>
+                <li>Identify an available and suitable classroom quickly. <span class="evidence-tag">75% Pain</span></li>
+                <li>Avoid contacting multiple administrative offices or faculty contacts.</li>
+                <li>Submit one clear, structured digital request.</li>
+                <li>Know whether a request is pending, approved or rejected without emailing.</li>
+                <li>Protect event schedules from last-minute room conflicts. <span class="evidence-tag">58% Cancelled</span></li>
+              </ul>
+            </div>
+
+            <div class="persona-block">
+              <h4>Observed Behaviours</h4>
+              <ul>
+                <li>Emails administration office with event details. <span class="evidence-tag">41% Channel</span></li>
+                <li>Reaches out to faculty contacts for manual room favors. <span class="evidence-tag">35% Channel</span></li>
+                <li>Visits administration office physically to ask about availability. <span class="evidence-tag">24% Channel</span></li>
+                <li>Waits hours or days without receiving approval status updates. <span class="evidence-tag">67% Slow Approval</span></li>
+                <li>Sends manual reminder follow-ups when replies stall.</li>
+                <li>Reschedules or cancels student events when room confirmation fails. <span class="evidence-tag">58% Impact</span></li>
+              </ul>
+            </div>
+
+            <div class="persona-block">
+              <h4>Frustrations &amp; Needs</h4>
+              <ul>
+                <li><strong>Frustration:</strong> Cannot see room schedules before requesting. <span class="evidence-tag">75%</span></li>
+                <li><strong>Frustration:</strong> Approval delays consume more than 30 mins to days. <span class="evidence-tag">58%</span></li>
+                <li><strong>Frustration:</strong> Paperwork and repeated administrative back-and-forth.</li>
+                <li><strong>Need:</strong> Reliable, transparent classroom availability information.</li>
+                <li><strong>Need:</strong> Visible, trackable approval status with clear ownership.</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Empathy Map Artefact & Description -->
+        <h3 class="section-subheading">4-Quadrant Empathy Map</h3>
+        <figure class="artefact-figure">
+          <img src="assets/empathy-map.png" alt="Empathy map showing what student classroom-booking users say, think, do and feel. Users report hidden availability, repeated follow-up, uncertainty and frustration.">
+          <figcaption>
+            <strong>Figure 1: Empathy Map Artefact.</strong> Four-quadrant synthesis isolating user statements (Say), cognitive uncertainty (Think), multi-channel manual actions (Do), and emotional tension (Feel).
+          </figcaption>
+        </figure>
+
+        <!-- User Journey Map & Description -->
+        <h3 class="section-subheading">User Journey &amp; Emotion Line</h3>
+        <figure class="artefact-figure">
+          <img src="assets/journey-map.png" alt="User Journey Map showing 7 stages from Event Need Arises to Final Outcome. The emotion line drops to -5 at Stage 6 when booking conflict is discovered.">
+          <figcaption>
+            <strong>Figure 2: User Journey Map &amp; Emotion Curve.</strong> Tracing 7 chronological stages from event definition (+2 score) to late conflict discovery (-5 score low point).
+          </figcaption>
+        </figure>
+
+        <!-- User Journey 7-Stage Table -->
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Stage</th>
+                <th>User Action</th>
+                <th>User Thought</th>
+                <th>Pain or Friction</th>
+                <th>Emotion Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. Event Need Arises</strong></td>
+                <td>Defines event, date, time &amp; expected attendance</td>
+                <td>“I should secure a classroom early.”</td>
+                <td>No friction yet</td>
+                <td><span class="badge badge-green">+2 (Hopeful)</span></td>
+              </tr>
+              <tr>
+                <td><strong>2. Search Availability</strong></td>
+                <td>Asks classmates or checks informal schedules</td>
+                <td>“Which room is actually free?”</td>
+                <td>No reliable availability source</td>
+                <td><span class="badge badge-blue">0 (Uncertain)</span></td>
+              </tr>
+              <tr>
+                <td><strong>3. Choose Channel</strong></td>
+                <td>Decides between faculty, email or office visit</td>
+                <td>“Who am I supposed to contact?”</td>
+                <td>Fragmented administrative ownership</td>
+                <td><span class="badge badge-amber">-1 (Confused)</span></td>
+              </tr>
+              <tr>
+                <td><strong>4. Submit Request</strong></td>
+                <td>Sends date, time and purpose details</td>
+                <td>“I hope I included everything.”</td>
+                <td>Inconsistent process &amp; paperwork</td>
+                <td><span class="badge badge-blue">0 (Cautious)</span></td>
+              </tr>
+              <tr>
+                <td><strong>5. Wait &amp; Follow Up</strong></td>
+                <td>Checks inbox repeatedly, sends reminders</td>
+                <td>“Has anybody opened my request?”</td>
+                <td>Zero status visibility while waiting</td>
+                <td><span class="badge badge-amber">-3 (Anxious)</span></td>
+              </tr>
+              <tr style="background-color: var(--rose-light);">
+                <td><strong>6. Conflict Discovered</strong></td>
+                <td>Learns room is booked or request delayed</td>
+                <td>“Now I may have to change the whole event!”</td>
+                <td><strong>Conflict discovered too late</strong></td>
+                <td><span class="badge badge-danger" style="font-size:0.85rem;">-5 (LOWEST DIP)</span></td>
+              </tr>
+              <tr>
+                <td><strong>7. Receive Outcome</strong></td>
+                <td>Confirms room or updates participants</td>
+                <td>“At least I finally know.”</td>
+                <td>Recovery still costs time &amp; effort</td>
+                <td><span class="badge badge-green">+2</span> / <span class="badge badge-danger">-3</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout-box problem-box">
+          <h3 class="callout-title">The Core Pain Point</h3>
+          <p class="lead-paragraph" style="margin-bottom: 0;">
+            The core pain is not simply filling out a booking request. It is being unable to see reliable classroom availability or approval progress, which forces users to wait, follow up and sometimes discover conflicts too late to protect their event plans.
+          </p>
+        </div>
+
+        <!-- User Stories -->
+        <h3 class="section-subheading">User Stories Directly Responding to the Journey Dip</h3>
+        <div class="user-stories-grid">
+          <div class="story-card">
+            <div class="story-number">User Story 1 · Discovery</div>
+            <p class="story-text">
+              “As a student organizer, I want to see which classrooms are available for my required date and time so that I can choose a realistic option without contacting multiple people.”
+            </p>
+            <div class="story-address">
+              <strong>Directly Responds To:</strong> Stage 2 &amp; 6 Journey Friction (Hidden availability &amp; late conflict discovery).
+            </div>
+          </div>
+
+          <div class="story-card">
+            <div class="story-number">User Story 2 · Submission</div>
+            <p class="story-text">
+              “As a student organizer, I want to submit one structured classroom request so that I do not have to rely on inconsistent emails, faculty messages or paperwork.”
+            </p>
+            <div class="story-address">
+              <strong>Directly Responds To:</strong> Stage 3 &amp; 4 Journey Friction (Fragmented channels &amp; paper bureaucracy).
+            </div>
+          </div>
+
+          <div class="story-card">
+            <div class="story-number">User Story 3 · Status Tracking</div>
+            <p class="story-text">
+              “As a requester, I want to check the approval status of my request so that I know whether to wait, follow up or adjust my event plans.”
+            </p>
+            <div class="story-address">
+              <strong>Directly Responds To:</strong> Stage 5 &amp; 6 Journey Friction (Approval uncertainty &amp; severe anxiety dip).
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PHASE 2: IDEATE & EVALUATE
+         ========================================================================== -->
+    <section id="phase2">
+      <div class="container">
+        <span class="phase-tag">Phase 2: Ideate &amp; Evaluate</span>
+        <h2 class="section-heading">Information Architecture &amp; Tree Testing</h2>
+
+        <!-- Feature Content Inventory -->
+        <h3 class="section-subheading">Complete 18-Feature Content Inventory</h3>
+        <p>
+          To prepare for card sorting and structural synthesis, 18 conceptual features and content items were identified and coded C01 through C18.
+        </p>
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Feature / Content Item Name</th>
+                <th>Functional Scope &amp; Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>C01</strong></td><td>Check classroom availability</td><td>View real-time schedule grids to identify unbooked time slots.</td></tr>
+              <tr><td><strong>C02</strong></td><td>Select date and time</td><td>Specify target start time, end time, and date for reservation.</td></tr>
+              <tr><td><strong>C03</strong></td><td>Filter by seating capacity</td><td>Refine classroom searches by required student seating count.</td></tr>
+              <tr><td><strong>C04</strong></td><td>View classroom equipment</td><td>Inspect available AV, projectors, whiteboards, and microphones.</td></tr>
+              <tr><td><strong>C05</strong></td><td>View classroom location</td><td>Check building name, floor number, and campus zone map.</td></tr>
+              <tr><td><strong>C06</strong></td><td>View classroom schedule</td><td>Examine full weekly master schedule for a specific room.</td></tr>
+              <tr><td><strong>C07</strong></td><td>Read classroom booking rules</td><td>Review lead time policies, noise restrictions, and usage guidelines.</td></tr>
+              <tr><td><strong>C08</strong></td><td>Submit booking request</td><td>Transmit completed reservation form for administrative review.</td></tr>
+              <tr><td><strong>C09</strong></td><td>Add event details</td><td>Provide event title, description, expected headcount, and club affiliation.</td></tr>
+              <tr><td><strong>C10</strong></td><td>View my booking requests</td><td>Access personal dashboard listing past and active room requests.</td></tr>
+              <tr><td><strong>C11</strong></td><td>Check approval status</td><td>Monitor real-time request state (Pending, Approved, Rejected).</td></tr>
+              <tr><td><strong>C12</strong></td><td>Approval or rejection notification</td><td>Receive email or alert updates when request state changes.</td></tr>
+              <tr><td><strong>C13</strong></td><td>View rejection reason</td><td>Read administrative notes detailing why a request was denied.</td></tr>
+              <tr><td><strong>C14</strong></td><td>Modify or reschedule request</td><td>Update date, time, or room selection for pending/approved requests.</td></tr>
+              <tr><td><strong>C15</strong></td><td>Cancel request</td><td>Withdraw a pending or approved reservation to release space.</td></tr>
+              <tr><td><strong>C16</strong></td><td>Find an alternative classroom</td><td>Receive automated recommendations when preferred room is booked.</td></tr>
+              <tr><td><strong>C17</strong></td><td>Contact responsible authority</td><td>Identify and message the specific administrator handling approval.</td></tr>
+              <tr><td><strong>C18</strong></td><td>Escalate delayed request</td><td>Trigger escalation flag when a request exceeds target approval SLA.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Hybrid Card Sort -->
+        <h3 class="section-subheading">Hybrid Card Sort &amp; Mental Models</h3>
+        <p class="lead-paragraph">
+          A hybrid card-sorting study was executed with <strong>10 real student participants</strong> (6 with booking experience). Participants categorized the 18 content items across four open/closed categories: <em>Find a Classroom, Book a Classroom, My Requests, Help and Rules</em>, plus custom user-created categories.
+        </p>
+
+        <figure class="artefact-figure">
+          <img src="assets/card-sort-results.png" alt="Card sort results matrix for 18 items across 10 participants. Shows winning categories and agreement percentages.">
+          <figcaption>
+            <strong>Figure 3: Card-Sort Matrix Artefact.</strong> Statistical consensus distribution revealing strong agreement across 11 items (&ge;70%), moderate agreement across 5 items (50–60%), and high ambiguity across 2 boundary items (40%).
+          </figcaption>
+        </figure>
+
+        <!-- IA V1 Tree Visual & Description -->
+        <h3 class="section-subheading">Initial Information Architecture (IA V1)</h3>
+        <figure class="artefact-figure">
+          <img src="assets/ia-v1.png" alt="Initial Information Architecture V1 hierarchy diagram showing 4 main branches: Find a Classroom, Book a Classroom, My Bookings, and Help and Rules.">
+          <figcaption>
+            <strong>Figure 4: IA V1 Tree Visual.</strong> Pre-testing taxonomy separating "Find a Classroom" and "Book a Classroom" into distinct top-level menu branches.
+          </figcaption>
+        </figure>
+
+        <!-- Clean Nested Explorer UI inside IDE Dark Window -->
+        <div class="tree-window">
+          <div class="tree-window-header">
+            <span class="window-dot dot-red"></span>
+            <span class="window-dot dot-yellow"></span>
+            <span class="window-dot dot-green"></span>
+            <span class="window-title">Information Architecture Blueprint — IA V1 (Pre-Testing Baseline)</span>
+          </div>
+          <div class="tree-content">
+            <div class="tree-root">Campus Classroom Booking System (V1 Baseline Model)</div>
+            
+            <div class="tree-branch">
+              <div class="tree-folder text-blue">A. Find a Classroom</div>
+              <div class="tree-leaf-group">
+                <div class="tree-file">A1. Check Availability</div>
+                <div class="tree-file">A2. Classroom Details (Capacity, Equipment, Location, Schedule)</div>
+                <div class="tree-file">A3. Find an Alternative Classroom</div>
+              </div>
+            </div>
+
+            <div class="tree-branch">
+              <div class="tree-folder text-amber">B. Book a Classroom</div>
+              <div class="tree-leaf-group">
+                <div class="tree-file">B1. Choose Booking Slot</div>
+                <div class="tree-file">B2. Add Event Details</div>
+                <div class="tree-file">B3. Submit Booking Request</div>
+              </div>
+            </div>
+
+            <div class="tree-branch">
+              <div class="tree-folder text-green">C. My Bookings</div>
+              <div class="tree-leaf-group">
+                <div class="tree-file">C1. View All Requests</div>
+                <div class="tree-file">C2. Check Approval Status</div>
+                <div class="tree-file">C3. Approval or Rejection Updates</div>
+                <div class="tree-file">C4. View Rejection Reason</div>
+                <div class="tree-file">C5. Modify or Reschedule</div>
+                <div class="tree-file">C6. Cancel Request</div>
+                <div class="tree-file">C7. Escalate Delayed Request</div>
+              </div>
+            </div>
+
+            <div class="tree-branch">
+              <div class="tree-folder text-purple">D. Help and Rules</div>
+              <div class="tree-leaf-group">
+                <div class="tree-file">D1. Classroom Booking Rules</div>
+                <div class="tree-file">D2. Contact Responsible Authority</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tree Testing Diagnostics & Description -->
+        <h3 class="section-subheading">Tree Testing &amp; Diagnostics</h3>
+        <p class="lead-paragraph">
+          To validate whether users could navigate IA V1, a text-based tree test was conducted with <strong>5 real students</strong> across <strong>5 realistic scenarios</strong> (25 total menu navigation decisions).
+        </p>
+
+        <figure class="artefact-figure">
+          <img src="assets/tree-test-results.png" alt="Tree test results table showing 68% direct first-choice success rate across 5 scenarios. Task 1 failed with only 40% success.">
+          <figcaption>
+            <strong>Figure 5: Tree-Test Validation Matrix.</strong> Quantitative score breakdown revealing an overall 68% direct first-menu success rate (17/25) and highlighting a major boundary failure on Task 1.
+          </figcaption>
+        </figure>
+
+        <!-- IA V2 Structural Pivot -->
+        <h3 class="section-subheading">Final Validated Information Architecture (IA V2)</h3>
+        <div class="callout-box pivot-box">
+          <h4 class="callout-title">The IA Structural Pivot Rationale (V1 &rarr; V2)</h4>
+          <p style="margin-bottom: 0;">
+            V1 separated “Find a Classroom” and “Book a Classroom.” Tree testing showed that participants repeatedly crossed this boundary, particularly when checking availability and classroom details. V2 merged these areas into <strong>“Find and Book a Classroom,”</strong> while preserving Find and Start a Booking as second-level groups. “My Bookings” was renamed <strong>“My Requests and Status,”</strong> and delayed-request escalation was grouped with pending requests while remaining accessible through Help.
+          </p>
+        </div>
+
+        <figure class="artefact-figure">
+          <img src="assets/ia-v2.png" alt="Revised Information Architecture V2 structural diagram. Merges Find and Book into a single top-level category and renames My Bookings to My Requests and Status.">
+          <figcaption>
+            <strong>Figure 6: IA V2 Blueprint Artefact.</strong> Validated Information Architecture blueprint establishing 3 top-level categories and refined second-level groupings.
+          </figcaption>
+        </figure>
+
+        <!-- Clean Nested Explorer UI inside IDE Dark Window for V2 -->
+        <div class="tree-window">
+          <div class="tree-window-header">
+            <span class="window-dot dot-red"></span>
+            <span class="window-dot dot-yellow"></span>
+            <span class="window-dot dot-green"></span>
+            <span class="window-title">Information Architecture Blueprint — IA V2 (Validated Structural Blueprint)</span>
+          </div>
+          <div class="tree-content">
+            <div class="tree-root">Campus Classroom Booking System (V2 Blueprint)</div>
+            
+            <div class="tree-branch">
+              <div class="tree-folder text-blue">A. Find and Book a Classroom</div>
+              <div class="tree-leaf-group">
+                <div class="tree-subfolder">A1. Find Available Classrooms</div>
+                <div class="tree-file-indent">• Enter Date and Time</div>
+                <div class="tree-file-indent">• View Available Classrooms</div>
+                
+                <div class="tree-subfolder">A2. Classroom Details</div>
+                <div class="tree-file-indent">• Seating Capacity &amp; Equipment Specs</div>
+                <div class="tree-file-indent">• Location Map &amp; Room Schedule</div>
+                
+                <div class="tree-subfolder">A3. Alternative Classrooms</div>
+                <div class="tree-file-indent">• Browse Similar Rooms</div>
+                
+                <div class="tree-subfolder">A4. Start a Booking</div>
+                <div class="tree-file-indent">• Select Date/Time, Event Details &amp; Submit Request</div>
+              </div>
+            </div>
+
+            <div class="tree-branch">
+              <div class="tree-folder text-green">B. My Requests and Status</div>
+              <div class="tree-leaf-group">
+                <div class="tree-subfolder">B1. View All Requests</div>
+                
+                <div class="tree-subfolder">B2. Pending Requests</div>
+                <div class="tree-file-indent">• Check Approval Status &amp; Updates</div>
+                <div class="tree-file-indent">• Escalate Delayed Request</div>
+                
+                <div class="tree-subfolder">B3. Rejected Requests</div>
+                <div class="tree-file-indent">• View Rejection Reason &amp; Find Alternative</div>
+                
+                <div class="tree-subfolder">B4. Manage Request</div>
+                <div class="tree-file-indent">• Modify, Reschedule or Cancel Request</div>
+              </div>
+            </div>
+
+            <div class="tree-branch">
+              <div class="tree-folder text-purple">C. Help and Rules</div>
+              <div class="tree-leaf-group">
+                <div class="tree-subfolder">C1. Classroom Booking Rules</div>
+                <div class="tree-subfolder">C2. Contact Responsible Authority</div>
+                <div class="tree-subfolder">C3. Help With a Delayed Request (Cross-linked to Pending Escalation)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PHASE 3: PRIORITIZATION
+         ========================================================================== -->
+    <section id="phase3">
+      <div class="container">
+        <span class="phase-tag">Phase 3: Prioritization</span>
+        <h2 class="section-heading">MoSCoW Prioritization &amp; DFV Evaluation</h2>
+        
+        <p class="lead-paragraph">
+          All 18 features were evaluated using MoSCoW rules to isolate the minimum viable set of capabilities required to deliver transparent room booking.
+        </p>
+
+        <figure class="artefact-figure">
+          <img src="assets/moscow-matrix.png" alt="MoSCoW prioritization grid dividing 18 features into Must Have (4), Should Have (8), Could Have (4), and Won't Have in this MVP (2).">
+          <figcaption>
+            <strong>Figure 7: MoSCoW Prioritization Grid Artefact.</strong> Categorization grid isolating 4 MVP Must-Haves to form the transparent feedback loop.
+          </figcaption>
+        </figure>
+
+        <!-- MoSCoW Table -->
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Feature Count</th>
+                <th>Included Feature Codes &amp; Names</th>
+                <th>Prioritization Rationale</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background-color: var(--emerald-light);">
+                <td><strong>MUST HAVE</strong></td>
+                <td><strong>4 Features</strong></td>
+                <td>
+                  <strong>C01</strong> Check availability<br>
+                  <strong>C02</strong> Select date and time<br>
+                  <strong>C08</strong> Submit booking request<br>
+                  <strong>C11</strong> Check approval status
+                </td>
+                <td>Forms the non-negotiable feedback loop: Check availability &rarr; Select slot &rarr; Submit request &rarr; Track status.</td>
+              </tr>
+              <tr>
+                <td><strong>SHOULD HAVE</strong></td>
+                <td>8 Features</td>
+                <td>
+                  C03, C04, C05, C09, C10, C12, C13, C14
+                </td>
+                <td>High-value capabilities (filters, notifications, details) to be added immediately after core stability.</td>
+              </tr>
+              <tr>
+                <td><strong>COULD HAVE</strong></td>
+                <td>4 Features</td>
+                <td>
+                  C06, C07, C15, C17
+                </td>
+                <td>Desirable secondary features (schedules, rules, manual cancellations) for secondary release cycles.</td>
+              </tr>
+              <tr style="background-color: var(--rose-light);">
+                <td><strong>WON'T HAVE IN THIS MVP</strong></td>
+                <td>2 Features</td>
+                <td>
+                  <strong>C16</strong> Find alternative classroom automatically<br>
+                  <strong>C18</strong> Escalate delayed request
+                </td>
+                <td>Postponed due to operational and technical prerequisites.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- DFV Matrix Evaluation -->
+        <h3 class="section-subheading">Desirability, Feasibility, Viability (DFV) Evaluation</h3>
+        <p class="lead-paragraph">
+          To determine the 4th and final Must-Have feature, a rigorous DFV evaluation (1–5 scale) was conducted between <strong>C11 Check Approval Status</strong> and <strong>C12 Approval or Rejection Notification</strong>.
+        </p>
+
+        <figure class="artefact-figure">
+          <img src="assets/dfv-matrix.png" alt="DFV Evaluation Matrix comparing C11 Check Approval Status (14/15) vs C12 Notification (10/15).">
+          <figcaption>
+            <strong>Figure 8: DFV Evaluation Matrix Artefact.</strong> Comparative score analysis selecting C11 Check Approval Status (14/15) over C12 Notification (10/15) for the final Must-Have position.
+          </figcaption>
+        </figure>
+
+        <!-- Final MVP Definition -->
+        <h3 class="section-subheading">Final MVP Definition</h3>
+        <p class="lead-paragraph">
+          The validated Minimum Viable Product (MVP) consists strictly of the <strong>4 core Must-Have capabilities</strong> needed to establish a transparent classroom booking loop.
+        </p>
+
+        <div class="user-stories-grid">
+          <div class="story-card">
+            <div class="story-number">MVP Capability 1</div>
+            <h4 style="font-size: 1.15rem; color: var(--ink-primary); margin-bottom: 0.5rem;">C01 — Check Classroom Availability</h4>
+            <p style="font-size: 0.9375rem; color: var(--ink-muted);">
+              Exposes real-time room schedules so organizers can identify free classrooms before initiating a request.
+            </p>
+          </div>
+
+          <div class="story-card">
+            <div class="story-number">MVP Capability 2</div>
+            <h4 style="font-size: 1.15rem; color: var(--ink-primary); margin-bottom: 0.5rem;">C02 — Select Date and Time</h4>
+            <p style="font-size: 0.9375rem; color: var(--ink-muted);">
+              Allows organizers to specify start time, end time, and event date for their target room reservation.
+            </p>
+          </div>
+
+          <div class="story-card">
+            <div class="story-number">MVP Capability 3</div>
+            <h4 style="font-size: 1.15rem; color: var(--ink-primary); margin-bottom: 0.5rem;">C08 — Submit Booking Request</h4>
+            <p style="font-size: 0.9375rem; color: var(--ink-muted);">
+              Transmits a single, structured digital booking request replacing fragmented emails and paper visits.
+            </p>
+          </div>
+
+          <div class="story-card">
+            <div class="story-number">MVP Capability 4</div>
+            <h4 style="font-size: 1.15rem; color: var(--ink-primary); margin-bottom: 0.5rem;">C11 — Check Approval Status</h4>
+            <p style="font-size: 0.9375rem; color: var(--ink-muted);">
+              Provides real-time visibility into request approval states (Pending, Approved, Rejected) to eliminate uncertainty.
+            </p>
+          </div>
+        </div>
+
+        <!-- Research Data Limitations -->
+        <h3 class="section-subheading">Research &amp; Data Limitations</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Methodological Dimension</th>
+                <th>Identified Limitation</th>
+                <th>Analytical Impact &amp; Mitigation Strategy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Primary Dataset Format</strong></td>
+                <td>Study relies on a 17-person structured survey. Incident-level observational interviews were not conducted.</td>
+                <td>Analyses are framed around reported survey patterns rather than observed ethnographic behaviors. Private warning documented in README.md.</td>
+              </tr>
+              <tr>
+                <td><strong>Category N1 Ambiguity</strong></td>
+                <td>Custom group N1 was selected 13 times, but the survey form did not capture descriptive labels for N1.</td>
+                <td>Claimed as a potential "Classroom Details" signal based on 5 equipment placements, but explicitly noted as unverified.</td>
+              </tr>
+              <tr>
+                <td><strong>Tree-Test Tracking Depth</strong></td>
+                <td>Participants recorded top-level menu letters (A, B, C) rather than complete leaf-node click paths.</td>
+                <td>First-choice top-level navigation success is highly reliable (68%), but leaf-level navigation accuracy remains unverified.</td>
+              </tr>
+              <tr>
+                <td><strong>Sample Demographics</strong></td>
+                <td>All participants were students; administration staff and faculty reviewers were unrepresented.</td>
+                <td>Findings accurately reflect student requester pain but do not capture administrative approval workflow constraints.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Conclusion -->
+        <h3 class="section-subheading">Conclusion &amp; Strategic Roadmap</h3>
+        <p class="lead-paragraph">
+          By grounded research sensemaking, card sorting, tree testing, and rigorous prioritization, this project transforms a fragmented email-and-office booking process into a validated, structural blueprint (IA V2) and focused 4-capability MVP.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       Footer Section & Academic Compliance Summary
+       ========================================================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Case Study Overview</h4>
+          <p>
+            Booking a Classroom Shouldn’t Require Guesswork — Mid-Term UX Case Study focusing on sensemaking, information architecture, and prioritization.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Research Methodology</h4>
+          <ul>
+            <li>• 17 Survey Respondents</li>
+            <li>• 10 Card-Sort Participants</li>
+            <li>• 5 Tree-Test Participants</li>
+            <li>• 18 Features Evaluated</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Deliverable Compliance</h4>
+          <ul>
+            <li>• Pure Semantic HTML &amp; CSS</li>
+            <li>• Zero JavaScript / Frameworks</li>
+            <li>• No App Screen Mockups</li>
+            <li>• Authentic Data &amp; Quotes Only</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>UI/UX Mid-Term Examination Case Study · Submission Ready · Hostable on GitHub Pages</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
